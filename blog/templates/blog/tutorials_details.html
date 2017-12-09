@@ -1,0 +1,14 @@
+{% include "blog/base.html" %} 
+
+{% if article.part|add:'0' > 1 %}
+<a href="{% url 'tutorials_details' article.part|add:'-1' %}">Before</a>
+{% endif %}
+
+{% if article.part|add:'0'  < 4 %}
+<a href="{% url 'tutorials_details' article.part|add:'1' %}">After</a>
+{% endif %}
+
+<h1>Part {{ article.part }}</h1>
+<div>
+	{{ article.contenu | safe }}
+</div>

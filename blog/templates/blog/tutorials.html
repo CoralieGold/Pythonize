@@ -1,0 +1,7 @@
+{% include "blog/base.html" %} 
+
+<h1>Tutorials</h1>
+{% for article in articles %}
+<a href="{% url 'tutorials_details' article.part %}">{{ article.part }}. {{ article.titre }}</a>
+<p>{{ story.tease|truncatewords:"100" }}</p>
+{% endfor %}

@@ -1,0 +1,18 @@
+<nav>
+
+	<h1>Pythonize Your Maya</h1>
+
+	<div class="col-sm-3">
+		<ul>
+			<li><a href="{% url 'home' %}" class="{% ifequal nav 'home' %}active{% endifequal %}">Home</a></li>
+			<li><a href="{% url 'tutorials' %}" class="{% ifequal nav 'tuto' %}active{% endifequal %}">Tutorials</a></li>
+			<li><a href="{% url 'about' %}" class="{% ifequal nav 'about' %}active{% endifequal %}">About</a></li>
+		</ul>
+		<div>
+			<a href="{% url 'sign_in' %}">Sign In</a>
+			<a href="{% url 'sign_up' %}">Sign Up</a>
+		</div>
+	</div>
+
+</nav>
+
