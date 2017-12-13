@@ -1,50 +1,13 @@
+{% load staticfiles %}
+<html>
 <head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-<style>
-	
-/**** NAV ****/
-nav {
-	background-color: #333;
-	color: #FFF;
-}
-
-nav a {
-	color: #fff;
-	text-decoration: none;
-}
-
-nav ul {
-	width: 200px;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-nav ul li {
-	background: #666;
-	color: #FFF;
-	border: 1px solid #000:
-	margin-bottom: 1px;
-}
-nav ul li a {
-	display: block;
-	background: #666;
-	color: #fff;
-	line-height: 1em;
-	text-align: center;
-	text-decoration: none;
-	padding: 4px 0;
-}
-
-nav ul li a:hover, nav ul li a:focus, nav ul li a:active, nav ul li a.active {
-	background: #444;
-	color: #AAA;
-	text-decoration: none;
-}
-
-
-</style>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Pythonize Your Maya</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
-<body>
-{% include "blog/nav.html" %} 
-</body>
+<body class="container-fluid">
+	<div class="row">
+	{% include "blog/nav.html" %}

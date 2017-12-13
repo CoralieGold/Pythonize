@@ -1,0 +1,129 @@
+html, body {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+	
+.container-fluid, .row {
+	min-height: 100%;
+}
+	
+	
+/**** GENERAL ****/
+
+a.button {
+	color: #fff;
+	text-decoration: none;
+	background-color: #333;
+	border-color: #000;
+	padding: 10px;
+}
+
+a.button:hover, a.button:focus, a.button:active {
+	color: #fff;
+	text-decoration: none;
+	background-color: #222;
+}
+
+.flex-container {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+	font-size: 3em;
+	text-align: center;
+}
+
+@media (min-width: 768px) {
+    .main {
+        padding-right: 40px;
+        padding-left: 240px; /* 180 + 40 */
+    }
+}
+
+/**** NAV ****/
+
+#menu {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+    width: 200px;
+}
+
+#menu ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+#menu ul li {
+	background: #666;
+	color: #FFF;
+	margin-bottom: 1px;
+	width: 100%;
+}
+
+#menu ul li a {
+	display: inline-block;
+	width: 100%;
+	background: #666;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	padding: 10px;
+}
+
+#menu ul li a:hover, #menu ul li a:focus, #menu ul li a:active, #menu ul li a.active {
+	background: #444;
+	color: #AAA;
+	text-decoration: none;
+}
+
+#menu h1 a {
+	font-size: 0.5em;
+	text-decoration: none;
+	color: #AAA;
+}
+
+#menu h1 a:hover, #menu h1 a:focus, #menu h1 a:active {
+	text-decoration: none;
+	color: #AAA;
+}
+
+#menu .sign {
+	position: fixed;
+	bottom: 5px;
+	margin: 5px;
+}
+/**** INDEX ****/
+
+.fullpage-content {
+	text-align: center;
+}
+
+.fullpage-content h1 {
+	font-size: 4em;
+}
+
+/**** TUTORIALS ****/
+
+ol li {
+	list-style-type: upper-roman;
+}
+
+

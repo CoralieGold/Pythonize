@@ -1,18 +1,13 @@
-<nav>
-
-	<h1>Pythonize Your Maya</h1>
-
-	<div class="col-sm-3">
-		<ul>
-			<li><a href="{% url 'home' %}" class="{% ifequal nav 'home' %}active{% endifequal %}">Home</a></li>
-			<li><a href="{% url 'tutorials' %}" class="{% ifequal nav 'tuto' %}active{% endifequal %}">Tutorials</a></li>
-			<li><a href="{% url 'about' %}" class="{% ifequal nav 'about' %}active{% endifequal %}">About</a></li>
-		</ul>
-		<div>
-			<a href="{% url 'sign_in' %}">Sign In</a>
-			<a href="{% url 'sign_up' %}">Sign Up</a>
-		</div>
+<nav id="menu">
+	<h1><a href="{% url 'home' %}">Pythonize Your Maya</a></h1>
+	<ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="0">
+		<li><a href="{% url 'home' %}" class="{% ifequal nav 'home' %}active{% endifequal %}">Home</a></li>
+		<li><a href="{% url 'tutorials' %}" class="{% ifequal nav 'tuto' %}active{% endifequal %}">Tutorials</a></li>
+		<li><a href="{% url 'about' %}" class="{% ifequal nav 'about' %}active{% endifequal %}">About</a></li>
+	</ul>
+	<div class="sign">
+		<a href="{% url 'sign_in' %}" class="button">Sign In</a>
+		<a href="{% url 'sign_up' %}" class="button">Sign Up</a>
 	</div>
-
 </nav>
 
