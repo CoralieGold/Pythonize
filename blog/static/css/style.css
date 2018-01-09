@@ -58,6 +58,9 @@ canvas {
 }
 
 
+.main:not(#index) {
+	background-color: #000;
+}
 
 /**** NAV ****/
 
@@ -138,4 +141,25 @@ ol li {
 	list-style-type: upper-roman;
 }
 
+pre code {
+	color: #000;
+	background-color: #FFF;
+}
 
+.note {
+	background-color: orange;
+	color: white;
+}
+
+pre code, .note, .exercise, .exercise_answer {
+	display: block;
+	padding: 10px;
+}
+
+.exercise {
+	border: blue 2px solid;
+}
+
+.exercise_answer {
+	border: green 2px solid;
+}
