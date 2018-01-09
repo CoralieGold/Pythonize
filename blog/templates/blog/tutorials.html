@@ -1,18 +1,21 @@
 {% include "blog/base.html" %} 
 
 <div class="col-sm-12 main">
-	<h1>Tutorials</h1>
-		
-	{% for article in articles %}
-	<div class="card col-sm-3">
-		<img class="card-img-top" src="..." alt="Card image cap">
-		<div class="card-body">
-			<h4 class="card-title">{{ article.titre }}</h4>
-			<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-			<a href="{% url 'tutorials_details' article.part %}" class="btn btn-primary">Go somewhere</a>
+	<div class="container-fluid">
+		<div class="row">
+			<h1 class="col-12">Tutorials</h1>
+			{% for article in articles %}
+			<div class="col-4">
+				<div class="card">
+					<img class="card-img-top" src="{{ article.image }}" alt="Card image cap">
+					<div class="card-body">
+						<h4 class="card-title">{{ article.part }}. {{ article.titre }}</h4>
+						<a href="{% url 'tutorials_details' article.part %}" class="btn">Read</a>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
 		</div>
-	</div>
-	{% endfor %}
-	
+	</div>	
 </div>
 

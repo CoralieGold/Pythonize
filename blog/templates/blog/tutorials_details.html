@@ -1,19 +1,27 @@
 {% include "blog/base.html" %} 
 
 <div class="col-sm-12 main">
-	<nav>
-		<ul class="pagination">
-			{% if article.part|add:'0' > 1 %}
-				<li class="page-item"><a class="page-link" href="{% url 'tutorials_details' article.part|add:'-1' %}">Previous</a></li>
-			{% endif %}
-			{% if article.part|add:'0'  < 4 %}
-				<li class="page-item"><a class="page-link" href="{% url 'tutorials_details' article.part|add:'1' %}">Next</a></li>
-			{% endif %}
-		</ul>
-	</nav>
-
-	<h1>Part {{ article.part }}</h1>
-	<div>
-		{{ article.contenu | safe }}
+	<div class="container-fluid">
+		<div class="row justify-content-center">
+			<nav>
+				<ul class="pagination">
+					{% if article.part|add:'0' > 1 %}
+						<li class="page-item"><a class="page-link" href="{% url 'tutorials_details' article.part|add:'-1' %}">Previous</a></li>
+					{% endif %}
+					{% if article.part|add:'0'  < 4 %}
+						<li class="page-item"><a class="page-link" href="{% url 'tutorials_details' article.part|add:'1' %}">Next</a></li>
+					{% endif %}
+				</ul>
+			</nav>
+		</div>
+	</div>
+			
+	<div class="container-fluid">
+		<div class="row">
+			<h1 class="col-12">Part {{ article.part }}</h1>
+			<div class="col-12">
+				{{ article.contenu | safe }}
+			</div>
+		</div>
 	</div>
 </div>
