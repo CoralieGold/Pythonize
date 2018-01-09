@@ -11,3 +11,5 @@ class Article(models.Model):
    contenu = models.TextField(null=True)
    
    part = models.CharField(max_length=100)
+   
+   image = models.CharField(max_length=100)
