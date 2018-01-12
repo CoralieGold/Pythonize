@@ -1,4 +1,8 @@
-{% include "blog/base.html" %} 
+{% extends "blog/base.html" %} 
+
+{% block title %}About{% endblock %}
+
+{% block content %}
 
 <div class="col-sm-12 main">
 	<div class="container-fluid">
@@ -25,3 +29,4 @@
 		</div>
 	</div>
 </div>
+{%endblock%}

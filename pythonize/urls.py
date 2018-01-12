@@ -16,13 +16,15 @@ Including another URLconf
 from django.conf.urls import url, include
 from blog import views
 from django.contrib import admin
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     url(r'^$', views.home, name='home'),
     url(r'^tutorials/$', views.tutorials, name='tutorials'),
     url(r'^tutorials/part/(\d+)$', views.tutorials_details, name='tutorials_details'),
-    url(r'^about$', views.about, name='about'),
-    url(r'^signIn$', views.sign_in, name='sign_in'),
+    url(r'^about/$', views.about, name='about'),
+    url(r'^login/$', auth_views.login, name="login"),
     url(r'^signUp$', views.sign_up, name='sign_up'),
+    url(r'^logout/$', auth_views.logout, {'next_page': 'home'}, name="logout"),
     url(r'^admin/', include(admin.site.urls)),
 ]

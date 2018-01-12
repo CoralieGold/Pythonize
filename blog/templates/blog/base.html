@@ -7,12 +7,30 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Pythonize Your Maya</title>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="/static/js/processing.js"></script>
-	
 </head>
 <body class="container-fluid">
 	<div class="row">
-	{% include "blog/nav.html" %}   
+		<nav id="menu">
+			<h1><a href="{% url 'home' %}">Pythonize Your Maya</a></h1>
+			<ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="0">
+				<li><a href="{% url 'home' %}" class="{% ifequal nav 'home' %}active{% endifequal %}">Home</a></li>
+				<li><a href="{% url 'tutorials' %}" class="{% ifequal nav 'tuto' %}active{% endifequal %}">Tutorials</a></li>
+				<li><a href="{% url 'about' %}" class="{% ifequal nav 'about' %}active{% endifequal %}">About</a></li>
+			</ul>
+			<div class="sign">
+				{% if user.is_authenticated %}
+					<a href="{% url 'logout' %}" class="btn">Logout</a>
+				{% else %}
+					<a href="{% url 'login' %}" class="btn">Login</a>
+					<a href="{% url 'sign_up' %}" class="btn">Sign Up</a>
+				{% endif %}
+			</div>
+		</nav>
+		{% block content %}
+		{% endblock %} 
+	</div>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="/static/js/processing.js"></script>
+</body>
