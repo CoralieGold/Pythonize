@@ -34,13 +34,13 @@ def sign_up(request):
 			form.save()
 			username = form.cleaned_data.get('username')
 			raw_password = form.cleaned_data.get('password1')
-			request.user = authenticate(username=username, password=raw_password)
-			login(request)
+			user = authenticate(username=username, password=raw_password)
+			login(request, user)
 			return redirect(home)
 	else:
 		form = UserCreationForm()
 
-	return render(request, 'blog/sign_up.html', {'nav': 'home', 'form': form})
+	return render(request, 'registration/sign_up.html', {'nav': 'home', 'form': form})
    
 '''def logout(request):
 	logout(request)
