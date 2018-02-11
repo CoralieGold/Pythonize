@@ -4,7 +4,7 @@ from django.http import HttpResponse, Http404
 from django.shortcuts import redirect, render
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.forms import UserCreationForm
-import models
+from blog import models
 
 def home(request):
     return render(request, 'blog/index.html', {'nav': 'home'})

@@ -3,13 +3,28 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
-<div class="col-sm-12 main">
-	<h1>Login</h1>
+<div class="col-sm-12 main vertical-center">
+	<div class="container-fluid">
+		<div class="row justify-content-center">
+			<div class="col-6">
+				<h1>Login</h1>
+				<form method="post">
+					{% csrf_token %}
+					{% for field in form %}
+					    <div class="form-group">
+					        <div class="form-errors">{{ field.error_messages }} {{ field.errors }}</div>
 
-	<form method="post">
-		{% csrf_token %}
-		{{ form.as_p }}
-		<button type="submit">Login</button>
-	</form>
+					        <div>{{ field.label_tag }}</div>
+					        <div>{{ field }}</div>
+					        {% if field.help_text %}
+					        	<div class="form-help">{{ field.help_text|safe }}</div>
+					        {% endif %}
+					    </div>
+					{% endfor %}
+					<button type="submit" class="btn">Login</button>
+				</form>
+			</div>
+		</div>
+	</div>
 </div>
 {% endblock %}

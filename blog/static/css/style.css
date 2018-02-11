@@ -1,19 +1,21 @@
-@import url('https://fonts.googleapis.com/css?family=Questrial|Bungee');
+@import url('https://fonts.googleapis.com/css?family=Questrial|Bungee+Inline');
 
 /***************************************************************************** COLOR *****************************************************************************/
-/* Light            :  #FFF5F5
- * Dark             :  #211919
- * MainColor        :  #754446
- * OtherColorDark   :  #826164 
- * OtherColorLight  :  #5C4446
+/* Light            :  #FFFFFF
+ * Dark             :  #193441
+ * MainColor        :  #91AA9D
+ * OtherColorDark   :  #3E606F 
+ * OtherColorLight  :  #D1DBBD
  */
 
 html, body {
 	height: 100%;
 	padding: 0;
 	margin: 0;
-	color: #FFF5F5;
+	color: #FFFFFF;
 	font-family: 'Questrial', sans-serif;
+	background-color: #193441;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%233e606f' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%233e606f'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
 }
 	
 body.container-fluid, .row {
@@ -32,25 +34,28 @@ body.container-fluid, .row {
 }
 
 a.btn, button.btn, .page-item .page-link {
-	color: #FFF5F5;
-	background-color: #826164;
-	border-color: #5C4446;
+	color: #FFFFFF;
+	background-color: #3E606F;
+	border-color: #91AA9D;
 	font-weight: bold;
+	transition: all 0.2s ease-in;
 }
 
 a.btn:hover, a.btn:focus, a.btn:active, button.btn:hover, button.btn:focus, button.btn:active, .page-item .page-link:hover, .page-item .page-link:focus, .page-item .page-link:active {
-	background-color: #5C4446;
-	color: #FFF5F5;
-	border-color: #5C4446;
+	background-color: #193441;
+	color: #FFFFFF;
+	border-color: #91AA9D;
 	font-weight: bold;
+	transition: all 0.2s ease-in;
 }
 
 .alert {
-	color: #FFF5F5;
+	color: #FFFFFF;
+	margin: 20px;
 }
 
 .alert::before {
-  color: #FFF5F5;
+  color: #FFFFFF;
   font-weight: bold;
   text-transform: uppercase;
   writing-mode: vertical-lr;
@@ -60,28 +65,31 @@ a.btn:hover, a.btn:focus, a.btn:active, button.btn:hover, button.btn:focus, butt
 }
 
 .alert.alert-light {
-	background-color: #5C4446;
-	border-color: #5C4446;
+	background-color: #D1DBBD;
+	border-color: #D1DBBD;
 	min-height: 70px;
+	color: #193441;
 }
 .alert.alert-light::before { 
-  content: "Note";
+ 	content: "Note";
+ 	color: #193441;
 }
 
 .alert.alert-dark {
-	color: #FFF5F5;
-	background-color: #826164;
-	border-color: #826164;
+	color: #FFFFFF;
+	background-color: #3E606F;
+	border-color: #3E606F;
 }
 
 .alert.alert-dar::before { 
-  content: "Warning";
+	content: "Warning";
 }
 
 h1 {
 	font-size: 3em;
 	text-align: center;
-	font-family: 'Bungee', cursive;
+	font-family: 'Bungee Inline', cursive;
+	padding: 30px;
 }
 
 @media (min-width: 768px) {
@@ -92,30 +100,28 @@ h1 {
 }
 
 a:not(.btn) {
-	color: #826164;
+	color: #D1DBBD;
 	font-weight: bold;
+	transition: all 0.2s ease-in;
 }
 
 a:not(.btn):hover, a:not(.btn):focus, a:not(.btn):active  {
-	color: #5C4446;
+	color: #3E606F;
 	font-weight: bold;
+	transition: all 0.2s ease-in;
 }
 
-canvas {
+/*canvas {
 	position:absolute;
 	top:0;
 	left:0;
 	width:100%;
 	height:100%;
 	z-index:-1000;
-}
+}*/
 
 p {
 	text-align: justify;
-}
-
-.main:not(#index) {
-	background-color: #211919;
 }
 
 /****************************************************************************** NAV ******************************************************************************/
@@ -130,7 +136,7 @@ p {
     padding: 20px;
     overflow-x: hidden;
     overflow-y: auto;
-    background-color: #FFF5F5;
+    background-color: #FFFFFF;
     border-right: 1px solid #eee;
     width: 200px;
 }
@@ -150,28 +156,34 @@ p {
 #menu ul li a {
 	display: inline-block;
 	width: 100%;
-	background: #754446;
-	color: #FFF5F5;
+	background: #91AA9D;
+	color: #FFFFFF;
 	text-align: center;
 	text-decoration: none;
 	padding: 10px;
+	transition: all 0.2s ease-in;
 }
 
 #menu ul li a:hover, #menu ul li a:focus, #menu ul li a:active, #menu ul li a.active {
-	background: #211919;
-	color: #FFF5F5;
+	background: #193441;
+	color: #FFFFFF;
 	text-decoration: none;
+	transition: all 0.2s ease-in;
+}
+
+#menu h1 {
+	padding: 0;
 }
 
 #menu h1 a {
 	font-size: 0.5em;
 	text-decoration: none;
-	color: #211919;
+	color: #193441;
 }
 
 #menu h1 a:hover, #menu h1 a:focus, #menu h1 a:active {
 	text-decoration: none;
-	color: #211919;
+	color: #193441;
 }
 
 #menu .sign {
@@ -193,14 +205,10 @@ p {
 /**************************************************************************** TUTORIALS ****************************************************************************/
 
 .card {
-	color: #211919;
-	background-color: #FFF5F5;
+	color: #193441;
+	background-color: #FFFFFF;
 	margin-bottom: 20px;
-}
-
-pre code {
-	color: #211919;
-	background-color: #FFF5F5;
+	margin: 20px;
 }
 
 .note {
@@ -211,6 +219,7 @@ pre code {
 pre code, .note, .exercise, .exercise_answer {
 	display: block;
 	padding: 10px;
+	margin:  20px;
 }
 
 .exercise {
@@ -221,14 +230,61 @@ pre code, .note, .exercise, .exercise_answer {
 	border: green 2px solid;
 }
 
+.pagination {
+	width: 50%;
+  	margin: 0 auto;
+}
+
+.pagination .page-item {
+	width: 50%;
+  	margin: 0 auto;
+  	text-align: center;
+}
+
+
 /****************************************************************************** ABOUT ******************************************************************************/
 
 #about .rsn a {
-	color: #FFF5F5;
+	color: #FFFFFF;
 	text-decoration: none;
 	text-align: center;
 }
 
 #about .rsn a:hover, #about .rsn a:focus, #about .rsn a:active {
-	color: #5C4446;
+	color: #D1DBBD;
+}
+
+/************************************************************************** SIGN UP / IN ***************************************************************************/
+
+form {
+    text-align: center;
+}
+
+form label {
+	text-transform: uppercase;
+	font-weight: bolder;
+}
+
+form .form-help {
+	color: #D1DBBD;
+	font-style: italic;
+}
+
+form .form-errors {
+	color: #FFFFFF;
+	background-color: #3E606F;
+	border-color: #3E606F;
+}
+
+form .form-errors ul li {
+	list-style: none;
+}
+
+input:not([type=range]), label, select, summary, textarea {
+	border-radius: 3px;
+	width: 100%;
+}
+
+form button {
+	margin: auto auto;
 }

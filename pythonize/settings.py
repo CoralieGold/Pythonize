@@ -25,7 +25,7 @@ SECRET_KEY = 'p0h3+@-+^!g@b0ziiwf4&jf_u^qu*i4^xcfsi64-p=wmhal#w@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['pythonize.pythonanywhere.com']
 
 
 # Application definition
