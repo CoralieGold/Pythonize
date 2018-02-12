@@ -4,36 +4,202 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
 	<link rel="stylesheet" href="{% static 'css/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/slidebars.min.css' %}">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Pythonize Your Maya</title>
 </head>
 <body class="container-fluid">
-	<div class="row">
-		<nav id="menu">
-			<h1><a href="{% url 'home' %}">Pythonize Your Maya</a></h1>
-			<ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="0">
-				<li><a href="{% url 'home' %}" class="{% ifequal nav 'home' %}active{% endifequal %}">Home</a></li>
-				<li><a href="{% url 'tutorials' %}" class="{% ifequal nav 'tuto' %}active{% endifequal %}">Tutorials</a></li>
-				<li><a href="{% url 'about' %}" class="{% ifequal nav 'about' %}active{% endifequal %}">About</a></li>
-			</ul>
-			<div class="sign">
-				{% if user.is_authenticated %}
-					<a href="{% url 'logout' %}" class="btn">Logout</a>
-				{% else %}
-					<a href="{% url 'login' %}" class="btn">Login</a>
-					<a href="{% url 'sign_up' %}" class="btn">Sign Up</a>
-				{% endif %}
+		<div class="row">
+			<div class="col-12">
+				<a href="#" class="js-open-left-slidebar"><i class="fa fa-bars fa-3x"></i></a>
+				{% block content %}
+				{% endblock %} 
 			</div>
-		</nav>
-		{% block content %}
-		{% endblock %} 
-	</div>
+			<div class="col-md-4 col-lg-3" off-canvas="slidebar-1 left reveal" id="menu">
+				<nav>
+					<a href="#" class="js-close-left-slidebar"><i class="fa fa-close fa-3x"></i></a>
+					<h1><a href="{% url 'home' %}">Pythonize Your Maya</a></h1>
+					<ul>
+						<li><a href="{% url 'home' %}" class="{% ifequal nav 'home' %}active{% endifequal %}">Home</a></li>
+						<li><a href="{% url 'tutorials' %}" class="{% ifequal nav 'tuto' %}active{% endifequal %}">Tutorials</a></li>
+						<li><a href="{% url 'about' %}" class="{% ifequal nav 'about' %}active{% endifequal %}">About</a></li>
+					</ul>
+					<div class="sign">
+						{% if user.is_authenticated %}
+						<a href="{% url 'logout' %}" class="btn">Logout</a>
+						{% else %}
+						<a href="{% url 'login' %}" class="btn">Login</a>
+						<a href="{% url 'sign_up' %}" class="btn">Sign Up</a>
+						{% endif %}
+					</div>
+				</nav>
+			</div>
+		</div>
+		
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<link rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+	href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 	<script>hljs.initHighlightingOnLoad();</script>
+	<script src="{% static 'js/slidebars.min.js' %}"></script>
+	<script type="text/javascript">
+		( function ( $ ) {
+    // Create a new instance of Slidebars
+    var controller = new slidebars();
+
+    // Events
+    $( controller.events ).on( 'init', function () {
+        console.log( 'Init event' );
+    } );
+
+    $( controller.events ).on( 'exit', function () {
+        console.log( 'Exit event' );
+    } );
+
+    $( controller.events ).on( 'css', function () {
+        console.log( 'CSS event' );
+    } );
+
+    $( controller.events ).on( 'opening', function ( event, id ) {
+        console.log( 'Opening event of slidebar with id ' + id );
+    } );
+
+    $( controller.events ).on( 'opened', function ( event, id ) {
+        console.log( 'Opened event of slidebar with id ' + id );
+    } );
+
+    $( controller.events ).on( 'closing', function ( event, id ) {
+        console.log( 'Closing event of slidebar with id ' + id );
+    } );
+
+    $( controller.events ).on( 'closed', function ( event, id ) {
+        console.log( 'Closed event of slidebar with id ' + id );
+    } );
+
+    // Initialize Slidebars
+    controller.init();
+
+    // Left Slidebar controls
+    $( '.js-toggle-left-slidebar' ).on( 'click', function ( event ) {
+        event.stopPropagation();
+        controller.toggle( 'slidebar-1' );
+    } );
+
+    $( '.js-open-left-slidebar' ).on( 'click', function ( event ) {
+        event.stopPropagation();
+        controller.open( 'slidebar-1' );
+    } );
+
+    $( '.js-close-left-slidebar' ).on( 'click', function ( event ) {
+        event.stopPropagation();
+        controller.close( 'slidebar-1' );
+    } );
+
+    // Close any
+    $( controller.events ).on( 'opened', function () {
+        $( '[canvas="container"]' ).addClass( 'js-close-any-slidebar' );
+    } );
+
+    $( controller.events ).on( 'closed', function () {
+        $( '[canvas="container"]' ).removeClass( 'js-close-any-slidebar' );
+    } );
+
+    $( 'body' ).on( 'click', '.js-close-any-slidebar', function ( event ) {
+        event.stopPropagation();
+        controller.close();
+    } );
+
+    // Initilize, exit and css reset
+    $( '.js-initialize-slidebars' ).on( 'click', function ( event ) {
+        event.stopPropagation();
+        controller.init();
+    } );
+
+    $( '.js-exit-slidebars' ).on( 'click', function ( event ) {
+        event.stopPropagation();
+        controller.exit();
+    } );
+
+    $( '.js-reset-slidebars-css' ).on( 'click', function ( event ) {
+        event.stopPropagation();
+        controller.css();
+    } );
+
+    // Is and get
+    $( '.js-is-active' ).on( 'click', function ( event ) {
+        event.stopPropagation();
+        console.log( controller.isActive() );
+    } );
+
+    $( '.js-is-active-slidebar' ).on( 'click', function ( event ) {
+        event.stopPropagation();
+        var id = prompt( 'Enter a Slidebar id' );
+        console.log( controller.isActiveSlidebar( id ) );
+    } );
+
+    $( '.js-get-active-slidebar' ).on( 'click', function ( event ) {
+        event.stopPropagation();
+        console.log( controller.getActiveSlidebar() );
+    } );
+
+    $( '.js-get-all-slidebars' ).on( 'click', function ( event ) {
+        event.stopPropagation();
+        console.log( controller.getSlidebars() );
+
+    } );
+
+    $( '.js-get-slidebar' ).on( 'click', function ( event ) {
+        event.stopPropagation();
+        var id = prompt( 'Enter a Slidebar id' );
+        console.log( controller.getSlidebar( id ) );
+    } );
+
+    // Callbacks
+    $( '.js-init-callback' ).on( 'click', function ( event ) {
+        event.stopPropagation();
+        controller.init( function () {
+            console.log( 'Init callback' );
+        } );
+    } );
+
+    $( '.js-exit-callback' ).on( 'click', function ( event ) {
+        event.stopPropagation();
+        controller.exit( function () {
+            console.log( 'Exit callback' );
+        } );
+    } );
+
+    $( '.js-css-callback' ).on( 'click', function ( event ) {
+        event.stopPropagation();
+        controller.css( function () {
+            console.log( 'CSS callback' );
+        } );
+    } );
+
+    $( '.js-open-callback' ).on( 'click', function ( event ) {
+        event.stopPropagation();
+        controller.open( 'slidebar-1', function () {
+            console.log( 'Open callback' );
+        } );
+    } );
+
+    $( '.js-close-callback' ).on( 'click', function ( event ) {
+        event.stopPropagation();
+        controller.close( function () {
+            console.log( 'Close callback' );
+        } );
+    } );
+
+    $( '.js-toggle-callback' ).on( 'click', function ( event ) {
+        event.stopPropagation();
+        controller.toggle( 'slidebar-1', function () {
+            console.log( 'Toggle callback' );
+        } );
+    } );
+} ) ( jQuery );
+
+	</script>
 </body>

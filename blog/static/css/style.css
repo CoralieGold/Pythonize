@@ -8,8 +8,10 @@
  * OtherColorLight  :  #D1DBBD
  */
 
-html, body {
-	height: 100%;
+html, body.container-fluid {
+	overflow: auto;
+	min-height: 100%;
+	width: 100%;
 	padding: 0;
 	margin: 0;
 	color: #FFFFFF;
@@ -20,6 +22,9 @@ html, body {
 	
 body.container-fluid, .row {
 	min-height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
 }
 
 	
@@ -86,17 +91,24 @@ a.btn:hover, a.btn:focus, a.btn:active, button.btn:hover, button.btn:focus, butt
 }
 
 h1 {
-	font-size: 3em;
+	font-size: 1em;
 	text-align: center;
 	font-family: 'Bungee Inline', cursive;
-	padding: 30px;
+	padding: 10px;
 }
 
 @media (min-width: 768px) {
-    .main {
-        padding-right: 40px;
-        padding-left: 240px; /* 180 + 40 */
-    }
+    h1 {
+		font-size: 2em;
+		padding: 20px;
+	}
+}
+
+@media (min-width: 1024px) {
+    h1 {
+		font-size: 3em;
+		padding: 30px;
+	}
 }
 
 a:not(.btn) {
@@ -127,18 +139,18 @@ p {
 /****************************************************************************** NAV ******************************************************************************/
 
 #menu {
-    position: fixed;
+    /*position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     z-index: 1000;
-    display: block;
+    display: block;*/
     padding: 20px;
-    overflow-x: hidden;
-    overflow-y: auto;
+/*    overflow-x: hidden;
+    overflow-y: auto;*/
     background-color: #FFFFFF;
     border-right: 1px solid #eee;
-    width: 200px;
+    /*min-width: 200px;*/
 }
 
 #menu ul {
@@ -172,6 +184,7 @@ p {
 }
 
 #menu h1 {
+	margin-top: 50px;
 	padding: 0;
 }
 
@@ -196,19 +209,47 @@ p {
 
 .fullpage-content {
 	text-align: center;
+	margin: 0 auto;
 }
 
 .fullpage-content h1 {
-	font-size: 4em;
+	font-size: 2em;
 }
+
+@media (min-width: 768px) {
+    .fullpage-content h1 {
+		font-size: 3em;
+	}
+}
+
+@media (min-width: 1024px) {
+    .fullpage-content h1 {
+		font-size: 4em;
+	}
+}
+
 
 /**************************************************************************** TUTORIALS ****************************************************************************/
 
 .card {
 	color: #193441;
 	background-color: #FFFFFF;
-	margin-bottom: 20px;
-	margin: 20px;
+	margin-bottom: 5px;
+	margin: 5px;
+}
+
+@media (min-width: 768px) {
+   .card {
+		margin-bottom: 10px;
+		margin: 10px;
+	}
+}
+
+@media (min-width: 1024px) {
+   .card {
+		margin-bottom: 20px;
+		margin: 20px;
+	}
 }
 
 .note {
