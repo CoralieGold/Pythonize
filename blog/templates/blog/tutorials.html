@@ -10,7 +10,7 @@
 			<h1 class="col-12">Tutorials</h1>
 			{% for article in articles %}
 			<div class="col-xs-12 col-md-6 col-lg-4">
-				<div class="card">
+				<div class="card {% if userConnected and article.part in doneArticles %}done{% endif %}">
 					<img class="card-img-top" src="{{ article.image }}" alt="Card image cap">
 					<div class="card-body">
 						<h4 class="card-title">{{ article.part }}. {{ article.titre }}</h4>

@@ -22,6 +22,18 @@
 			<div class="col-md-10">
 				{{ article.contenu | safe }}
 			</div>
+			<div class="col-md-10">
+				{% if userConnected %}
+					<form method="POST">
+						{% csrf_token %}
+						{% if done %}
+							<input type="submit" class="col-5" value="Tuto already done" disabled>
+						{% else %}
+							<input type="submit" class="col-5" value="Mark tuto as done">
+						{% endif %}
+					</form>
+				{% endif %}
+			</div>
 		</div>
 	</div>
 </div>
