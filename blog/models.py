@@ -30,7 +30,7 @@ class ListField(models.TextField):
         if isinstance(value, list):
             return value
 
-        return ast.literal_eval(value)
+        return value
 
     def get_prep_value(self, value):
         if value is None:

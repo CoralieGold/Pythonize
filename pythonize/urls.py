@@ -17,6 +17,7 @@ from django.conf.urls import url, include
 from blog import views
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
+import newsletter
 
 urlpatterns = [
     url(r'^$', views.home, name='home'),
@@ -27,4 +28,5 @@ urlpatterns = [
     url(r'^signUp$', views.sign_up, name='sign_up'),
     url(r'^logout/$', auth_views.logout, {'next_page': 'home'}, name="logout"),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^newsletter/', include('newsletter.urls'))
 ]
