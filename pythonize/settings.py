@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    'newsletter',
+    #'newsletter',
     'blog'
 ]
 
@@ -83,10 +83,10 @@ WSGI_APPLICATION = 'pythonize.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'pythonize',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': '127.0.0.1',
+        'NAME': 'pythonize$default',
+        'USER': 'pythonize',
+        'PASSWORD': 'xPHHDtRAuW6MMvqB',
+        'HOST': 'pythonize.mysql.pythonanywhere-services.com',
         'PORT': '3306',
     }
 }
