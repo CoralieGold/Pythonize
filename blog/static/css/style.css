@@ -93,9 +93,10 @@ input[type=submit]:disabled {
 	color: #FFFFFF;
 	background-color: #3E606F;
 	border-color: #3E606F;
+	min-height: 100px;
 }
 
-.alert.alert-dar::before { 
+.alert.alert-dark::before { 
 	content: "Warning";
 }
 
@@ -227,6 +228,11 @@ p {
 	background-color: #FFFFFF;
 	margin-bottom: 5px;
 	margin: 5px;
+}
+
+.card .card-img-top {
+	max-height: 300px;
+	max-width: 300px;
 }
 
 .card.done {
