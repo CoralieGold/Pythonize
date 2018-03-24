@@ -228,15 +228,17 @@ p {
 	background-color: #FFFFFF;
 	margin-bottom: 5px;
 	margin: 5px;
+	border: none;
+	padding: 10px;
 }
 
-.card .card-img-top {
+/*.card .card-img-top {
 	max-height: 300px;
 	max-width: 300px;
-}
+}*/
 
 .card.done {
-	background-color: #AAAAAA;
+	background-color: rgba(255, 255, 255, 0.5);
 }
 
 @media (min-width: 768px) {
