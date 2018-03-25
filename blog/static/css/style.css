@@ -101,7 +101,7 @@ input[type=submit]:disabled {
 
 h1 {
 	font-size: 2em;
-	margin: 20px;
+	margin: 20px 0;
 	text-align: center;
 	font-family: 'Bungee Inline', cursive;
 }
@@ -114,7 +114,7 @@ h1 {
 }
 
 h2 {
-	margin-top: 30px;
+	margin-top: 30px 0;
 }
 
 a:not(.btn) {
