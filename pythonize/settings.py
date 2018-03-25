@@ -83,10 +83,10 @@ WSGI_APPLICATION = 'pythonize.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'pythonize$default',
-        'USER': 'pythonize',
-        'PASSWORD': 'xPHHDtRAuW6MMvqB',
-        'HOST': 'pythonize.mysql.pythonanywhere-services.com',
+        'NAME': 'pythonize',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': '127.0.0.1',
         'PORT': '3306',
     }
 }

@@ -3,3 +3,5 @@ __pycache__
 myvenv
 pythonize/settings.py
 pythonize/settings.pyc
+
+pythonize/settings.py
