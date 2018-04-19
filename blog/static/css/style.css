@@ -363,6 +363,11 @@ form .form-help {
 	font-style: italic;
 }
 
+form .form-help ul {
+	list-style: none;
+	display: inline;
+}
+
 form .form-errors {
 	color: #FFFFFF;
 	background-color: #3E606F;
