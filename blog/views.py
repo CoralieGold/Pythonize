@@ -54,7 +54,9 @@ def tutorials_details(request, part):
 			tutosDone = list(user.profile.tutosDone)
 			tutosDone.append(str(part))
 			user.profile.tutosDone = tutosDone
-			user.save()     
+			user.save()
+			tutorials_details(request, str(int(part) + 1))
+			return     
 			
 		userConnected = True
 		articleDone = True if part in request.user.profile.tutosDone else False
