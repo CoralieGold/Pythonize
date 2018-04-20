@@ -379,8 +379,7 @@ form .form-errors ul li {
 }
 
 input:not([type=range]), label, select, summary, textarea {
-	border-radius: 3px;
-	width: 100%;
+	border-radius: 5px;
 }
 
 form button {
