@@ -28,12 +28,26 @@ html, body.container-fluid {
 	}
 }
 
-#particles-js {
+.mainContent {
+    width: 100%; // or whatever
+    height: 100%;
+    position: relative;
+}
+
+.particlesContent, .blockContent {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    top: 0;
-    /*z-index: -100;*/
+}
+
+.particlesContent {
+    z-index: 0;
+}
+
+.blockContent {
+    z-index: 1;
 }
 
 
