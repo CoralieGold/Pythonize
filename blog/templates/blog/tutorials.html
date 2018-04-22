@@ -9,17 +9,19 @@
 		<div class="row">
 			<h1 class="col-12">Tutorials</h1>
 			<h3 class="text-center col-12">Discover how to use the programming language Python in the 3D software Maya Autodesk through a dozen of simple tutorials.</h3>
-			{% for article in articles %}
-			<div class="col-xs-12 col-md-6 col-lg-4">
-				<div class="card {% if userConnected and article.part in doneArticles %}done{% endif %}">
-					<a href="{% url 'tutorials_details' article.part %}"><img class="card-img-top" src="{{ article.image }}" alt="Card image cap"></a>
-					<div class="card-body row">
-						<h4 class="card-title col-md-8">{{ article.part }}. {{ article.titre }}</h4>
-						<a href="{% url 'tutorials_details' article.part %}" class="btn col-md-4"">Read{% if userConnected and article.part in doneArticles %} &nbsp;&nbsp;<i class="fa fa-check"></i>{% endif %}</a>
+			<div class="card-deck">
+				{% for article in articles %}
+				<div class="col-xs-12 col-md-6 col-lg-4">
+					<div class="card {% if userConnected and article.part in doneArticles %}done{% endif %}">
+						<a href="{% url 'tutorials_details' article.part %}"><img class="card-img-top" src="{{ article.image }}" alt="Card image cap"></a>
+						<div class="card-body row">
+							<h4 class="card-title col-md-8">{{ article.part }}. {{ article.titre }}</h4>
+							<a href="{% url 'tutorials_details' article.part %}" class="btn col-md-4"">Read{% if userConnected and article.part in doneArticles %} &nbsp;&nbsp;<i class="fa fa-check"></i>{% endif %}</a>
+						</div>
 					</div>
 				</div>
+				{% endfor %}
 			</div>
-			{% endfor %}
 		</div>
 	</div>	
 <!-- </div> -->
