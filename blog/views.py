@@ -44,7 +44,8 @@ def tutorials(request):
 	return render(request, 'blog/tutorials.html', {'nav': 'tuto', 'articles': articles, 'userConnected': userConnected, 'doneArticles': doneArticles})
 
 def tutorials_details(request, part):
-	if int(part) > 10:
+	numberOfArticles = len(models.Article.objects.all())
+	if int(part) > numberOfArticles:
 		return redirect(home)
 	article = models.Article.objects.get(part=part)
 
@@ -55,13 +56,17 @@ def tutorials_details(request, part):
 			tutosDone.append(str(part))
 			user.profile.tutosDone = tutosDone
 			user.save()
-			tutorials_details(request, str(int(part) + 1))
-			return     
-			
+
+			if int(part) < numberOfArticles:
+				part = str(int(part) + 1)
+				return redirect('/tutorials/part/%s' % part)
+			else:
+				return redirect(home)
+
 		userConnected = True
 		articleDone = True if part in request.user.profile.tutosDone else False
 	else:
 		userConnected = False
 		articleDone = False
-
-	return render(request, 'blog/tutorials_details.html', {'nav': 'tuto', 'article': article, 'userConnected': userConnected, 'done': articleDone })
+	
+	return render(request, 'blog/tutorials_details.html', {'nav': 'tuto', 'article': article, 'userConnected': userConnected, 'done': articleDone, 'nbArticle': numberOfArticles })
